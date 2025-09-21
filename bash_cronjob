@@ -1,0 +1,17 @@
+#!/bin/bash
+time_date="$(date)"
+file="cron_log"
+
+# File ko current directory me create karo
+echo "Today Is : $time_date" >> "$file"
+echo "My File is : $file"
+
+cat -n "$file"
+
+if [ "$(date +%u)" -eq 2 ]; then
+	    echo "$file is deleting..."
+	        rm -rf "$file"
+	else
+		    echo "Your $file file is safe."
+fi
+
